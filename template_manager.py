@@ -18,25 +18,26 @@ class TemplateManager:
             <p class="text-sm text-gray-500">Last updated: {last_updated}</p>
         </header>
         
-        <main class="space-y-4">
-            {self._render_messages(messages)}
-        </main>
-
-        <form method="POST" action="/" class="mt-6">
+        <form method="POST" action="/" class="mb-8 sticky top-0 bg-gray-50 p-4 shadow-lg rounded-lg">
             <div class="flex gap-2">
-                <input type="text" name="message" 
-                    placeholder="Write a message..." 
+                <input type="text" name="message"
+                    placeholder="Write a message..."
                     class="flex-1 rounded-lg border border-gray-300 px-4 py-2"
-                    required>
-                <button type="submit" 
+                    required
+                    autofocus>
+                <button type="submit"
                     class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
                     Send
                 </button>
             </div>
         </form>
-        
+
+        <main class="space-y-4">
+            {self._render_messages(messages)}
+        </main>
+
         <footer class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">
-            <p>To participate, visit the <a href="https://github.com/gulkily/bananachat" 
+            <p>To participate, visit the <a href="https://github.com/gulkily/bananachat"
                class="text-blue-500 hover:text-blue-700">GitHub repository</a></p>
         </footer>
     </div>
