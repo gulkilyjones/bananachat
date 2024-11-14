@@ -1,0 +1,21 @@
+2024-11-14 00:02:50,848 - ERROR - Error reading message messages/aboutme.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,848 - ERROR - Error reading message messages/file.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,848 - ERROR - Error reading message messages/hi.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,848 - ERROR - Error reading message messages/ok.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/readme.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/test.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text1.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text11.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text12.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text13.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text14.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text15.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text16.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text2.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,849 - ERROR - Error reading message messages/text20.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,850 - ERROR - Error reading message messages/text21.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,850 - ERROR - Error reading message messages/text3.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:02:50,850 - ERROR - Error reading message messages/thanks.txt: not enough values to unpack (expected 2, got 1)
+2024-11-14 00:04:33,775 - INFO - Added new message: msg_1731542673.txt
+2024-11-14 00:41:39,752 - INFO - Server running on http://localhost:8000
+2024-11-14 00:42:45,921 - INFO - Server shutting down...

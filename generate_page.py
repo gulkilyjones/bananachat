@@ -3,8 +3,19 @@ import os
 # Define the path to the directory containing message files
 messages_dir = "./messages"
 
-# List of file names in the order to display in the chat
-message_files = sorted(os.listdir(messages_dir))
+# Set to store unique file paths
+unique_message_files = set()
+
+# Traverse the messages directory, including subdirectories
+for root, _, files in os.walk(messages_dir):
+    for file in files:
+        if file.endswith(".txt"):  # Only include .txt files
+            file_path = os.path.join(root, file)
+            unique_message_files.add(
+                file_path)  # Automatically ignore duplicates
+
+# Convert set to a sorted list
+sorted_message_files = sorted(unique_message_files)
 
 # Create HTML structure
 html_content = """
@@ -26,20 +37,17 @@ html_content = """
     <div class="chat-container">
 """
 
-# Loop through the files and add each to the HTML
-for index, filename in enumerate(message_files):
-    filepath = os.path.join(messages_dir, filename)
-    
-    # Ensure we are only reading text files
-    if os.path.isfile(filepath) and filename.endswith(".txt"):
-        with open(filepath, "r") as file:
-            content = file.read().strip()
+# Loop through the unique sorted files and add each to the HTML
+for index, filepath in enumerate(sorted_message_files):
+    # Read the content of each text file
+    with open(filepath, "r") as file:
+        content = file.read().strip()
 
-        # Determine if the message is 'sent' or 'received' based on index
-        message_class = "sent" if index % 2 == 0 else "received"
-        
-        # Append the message content to the HTML structure
-        html_content += f'<div class="message {message_class}">{content}</div>\n'
+    # Determine if the message is 'sent' or 'received' based on index
+    message_class = "sent" if index % 2 == 0 else "received"
+
+    # Append the message content to the HTML structure
+    html_content += f'<div class="message {message_class}">{content}</div>\n'
 
 # Close the HTML structure
 html_content += """
@@ -53,4 +61,3 @@ with open("chat_interface.html", "w") as html_file:
     html_file.write(html_content)
 
 print("HTML chat interface generated as 'chat_interface.html'.")
-
