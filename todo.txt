@@ -1,0 +1,5 @@
+
+
+Add dark mode support?
+Add message threading visualization?
+Add user avatars (from GitHub)?

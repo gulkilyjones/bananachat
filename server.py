@@ -1,13 +1,13 @@
 import os
-from http.server import SimpleHTTPRequestHandler, HTTPServer
+import argparse
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 import urllib.parse
 import cgi
+from pathlib import Path
 
 # Directory to store messages
-messages_directory = "messages"
-
-# Ensure the messages directory exists
-os.makedirs(messages_directory, exist_ok=True)
+messages_directory = Path("./messages")
+messages_directory.mkdir(exist_ok=True)  # Ensure the messages directory exists
 
 # Function to generate the HTML chat interface
 def generate_chat_html():
@@ -87,12 +87,11 @@ def generate_chat_html():
 ''')
 
         # Add messages from files
-        for filename in sorted(os.listdir(messages_directory)):
-            filepath = os.path.join(messages_directory, filename)
-            if os.path.isfile(filepath):
-                with open(filepath, "r") as file:
+        for filename in sorted(messages_directory.iterdir()):
+            if filename.is_file() and filename.suffix == '.txt':
+                with filename.open("r") as file:
                     content = file.read().strip()
-                    label = os.path.splitext(filename)[0]
+                    label = filename.stem
                     message_class = "sender" if label.startswith(('a', 'e', 'i', 'o', 'u')) else "receiver"
                     
                     html_file.write(f'''
@@ -132,8 +131,8 @@ class ChatRequestHandler(SimpleHTTPRequestHandler):
             # Save message if not empty
             if message:
                 # Use a simple counter for unique file names
-                count = len(os.listdir(messages_directory)) + 1
-                with open(os.path.join(messages_directory, f"message{count}.txt"), "w") as file:
+                count = len(list(messages_directory.iterdir())) + 1
+                with open(messages_directory / f"message{count}.txt", "w") as file:
                     file.write(message)
 
                 # Regenerate the HTML file with the new message
@@ -144,12 +143,35 @@ class ChatRequestHandler(SimpleHTTPRequestHandler):
             self.send_header('Location', '/')
             self.end_headers()
 
-# Initialize the chat HTML page
-generate_chat_html()
+# Command-line argument parsing
+def main():
+    parser = argparse.ArgumentParser(description="Start the chat server.")
+    parser.add_argument(
+        "--port", 
+        type=int, 
+        default=8000, 
+        help="Port to run the server on (default: 8000)"
+    )
+    args = parser.parse_args()
 
-# Run the server
-server_address = ('', 8000)
-httpd = HTTPServer(server_address, ChatRequestHandler)
-print("Server running on http://localhost:8000")
-httpd.serve_forever()
+    # Validate port range
+    if not (1 <= args.port <= 65535):
+        print(f"Error: Invalid port number {args.port}. Please provide a port between 1 and 65535.")
+        return
 
+    # Initialize the chat HTML page
+    generate_chat_html()
+
+    # Start the server
+    server_address = ("", args.port)
+    httpd = HTTPServer(server_address, ChatRequestHandler)
+    print(f"Server running on http://localhost:{args.port}")
+
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("Server shutting down...")
+        httpd.server_close()
+
+if __name__ == "__main__":
+    main()

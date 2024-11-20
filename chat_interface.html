@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat Interface</title>
+        <style>
+            body { font-family: Arial, sans-serif; background-color: #f7f7f7; margin: 0; padding: 20px; }
+            .chat-container { max-width: 600px; margin: auto; padding: 10px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+            .message { padding: 8px 15px; margin: 5px 0; border-radius: 15px; max-width: 70%; }
+            .sent { background-color: #DCF8C6; align-self: flex-end; margin-left: auto; }
+            .received { background-color: #E0E0E0; align-self: flex-start; }
+            .message-form { display: flex; margin-top: 20px; }
+            .message-input { flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+            .message-submit { padding: 10px 20px; border-radius: 5px; background-color: #4CAF50; color: white; border: none; margin-left: 10px; cursor: pointer; }
+        </style>
+    </head>
+    <body>
+        <div class="chat-container">
+    <div class="message sent">hello, this is Danyl</div>
+<div class="message received">hi, another test of forking.</div>
+<div class="message sent">there is nothing here too</div>
+<div class="message received">hi there!</div>
+<div class="message received">hi test</div>
+<div class="message sent">hi!</div>
+<div class="message received">okie!</div>
+<div class="message sent">this is a bananachat project</div>
+<div class="message received"></div>
+<div class="message sent"></div>
+<div class="message received">hey there</div>
+<div class="message sent">testing</div>
+<div class="message received">hi</div>
+<div class="message sent">q</div>
+<div class="message received">asdfadsfda</div>
+<div class="message sent">asdfasdfda</div>
+<div class="message received"></div>
+<div class="message sent">asdfads</div>
+<div class="message received">asdfadsf</div>
+<div class="message sent">abcdefg</div>
+<div class="message received">?????</div>
+<div class="message sent"><script>alert()</script></div>
+<div class="message received">a</div>
+<div class="message sent"></div>
+<div class="message received">thank you</div>
+
+        </div>
+        <form method="POST" action="/" class="message-form">
+            <input type="text" name="message" placeholder="Write a message..." class="message-input" required>
+            <input type="submit" value="Send" class="message-submit">
+        </form>
+    </body>
+    </html>
+    
