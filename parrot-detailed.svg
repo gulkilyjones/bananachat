@@ -1,0 +1,112 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 600"
+  width="400"
+  height="600"
+>
+  <!-- Body -->
+  <path
+    d="M200,300 C140,250 80,360 140,450 C160,480 240,480 260,450 C320,360 260,250 200,300 Z"
+    fill="green"
+    stroke="darkgreen"
+    stroke-width="2"
+  />
+
+  <!-- Body Feather Details -->
+  <path
+    d="M180,330 Q200,350 220,330"
+    fill="none"
+    stroke="darkgreen"
+    stroke-width="1"
+  />
+  <path
+    d="M180,360 Q200,380 220,360"
+    fill="none"
+    stroke="darkgreen"
+    stroke-width="1"
+  />
+  <path
+    d="M180,390 Q200,410 220,390"
+    fill="none"
+    stroke="darkgreen"
+    stroke-width="1"
+  />
+
+  <!-- Head -->
+  <circle cx="200" cy="200" r="70" fill="yellow" stroke="goldenrod" stroke-width="3" />
+
+  <!-- Head Feather Details -->
+  <path
+    d="M170,160 Q200,150 230,160"
+    fill="none"
+    stroke="orange"
+    stroke-width="3"
+  />
+  <path
+    d="M180,140 Q200,130 220,140"
+    fill="none"
+    stroke="orange"
+    stroke-width="3"
+  />
+
+  <!-- Eye -->
+  <circle cx="180" cy="180" r="10" fill="black" />
+  <circle cx="182" cy="178" r="4" fill="white" />
+
+  <!-- Beak -->
+  <path
+    d="M200,220 Q260,240 200,260 Q220,240 200,220"
+    fill="orange"
+    stroke="black"
+    stroke-width="2"
+  />
+
+  <!-- Wing -->
+  <path
+    d="M120,280 C100,400 300,450 260,350 C240,300 160,250 120,280 Z"
+    fill="blue"
+    stroke="darkblue"
+    stroke-width="2"
+  />
+
+  <!-- Wing Feather Details -->
+  <path
+    d="M140,310 Q180,330 220,310"
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
+  />
+  <path
+    d="M140,340 Q180,360 220,340"
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
+  />
+
+  <!-- Tail -->
+  <path
+    d="M180,450 L200,600 L220,450"
+    fill="red"
+    stroke="darkred"
+    stroke-width="2"
+  />
+  <path
+    d="M190,460 L200,590 L210,460"
+    fill="orange"
+    stroke="darkorange"
+    stroke-width="2"
+  />
+
+  <!-- Feet -->
+  <path
+    d="M170,480 Q160,500 180,500 Q170,500 170,480"
+    fill="brown"
+  />
+  <path
+    d="M230,480 Q220,500 240,500 Q230,500 230,480"
+    fill="brown"
+  />
+
+  <!-- Background Circle -->
+  <circle cx="200" cy="300" r="300" fill="lightblue" />
+</svg>
