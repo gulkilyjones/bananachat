@@ -1,0 +1,92 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 300 300"
+  width="300"
+  height="300"
+>
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#F5F5F5" />
+
+  <!-- Cat's body -->
+  <ellipse cx="150" cy="200" rx="70" ry="90" fill="#D3BFAF" stroke="#B39981" stroke-width="2" />
+
+  <!-- Body shading -->
+  <ellipse cx="150" cy="210" rx="65" ry="80" fill="rgba(0,0,0,0.1)" />
+
+  <!-- Cat's tail -->
+  <path
+    d="M200,210 Q240,200 220,250 Q200,300 170,270"
+    fill="#D3BFAF"
+    stroke="#B39981"
+    stroke-width="2"
+  />
+
+  <!-- Cat's head -->
+  <circle cx="150" cy="100" r="50" fill="#D3BFAF" stroke="#B39981" stroke-width="2" />
+
+  <!-- Cat's ears -->
+  <polygon points="110,50 80,100 120,100" fill="#D3BFAF" stroke="#B39981" stroke-width="2" />
+  <polygon points="190,50 180,100 220,100" fill="#D3BFAF" stroke="#B39981" stroke-width="2" />
+
+  <!-- Inner ears -->
+  <polygon points="112,60 92,95 118,95" fill="#F5E4D7" />
+  <polygon points="188,60 184,95 212,95" fill="#F5E4D7" />
+
+  <!-- Cat's face gradient -->
+  <radialGradient id="faceGradient" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#D3BFAF" />
+    <stop offset="100%" stop-color="#B39981" />
+  </radialGradient>
+  <circle cx="150" cy="100" r="48" fill="url(#faceGradient)" />
+
+  <!-- Cat's eyes -->
+  <ellipse cx="130" cy="90" rx="8" ry="12" fill="#000" />
+  <ellipse cx="170" cy="90" rx="8" ry="12" fill="#000" />
+
+  <!-- Eye highlights -->
+  <circle cx="132" cy="86" r="2" fill="#FFF" />
+  <circle cx="172" cy="86" r="2" fill="#FFF" />
+
+  <!-- Cat's nose -->
+  <polygon points="145,105 155,105 150,110" fill="#F08080" />
+
+  <!-- Cat's mouth -->
+  <path
+    d="M150,110 Q145,120 140,115"
+    stroke="#000"
+    stroke-width="1"
+    fill="none"
+  />
+  <path
+    d="M150,110 Q155,120 160,115"
+    stroke="#000"
+    stroke-width="1"
+    fill="none"
+  />
+
+  <!-- Cat's whiskers -->
+  <line x1="100" y1="105" x2="135" y2="105" stroke="#000" stroke-width="1" />
+  <line x1="100" y1="110" x2="135" y2="108" stroke="#000" stroke-width="1" />
+  <line x1="100" y1="100" x2="135" y2="102" stroke="#000" stroke-width="1" />
+  <line x1="165" y1="105" x2="200" y2="105" stroke="#000" stroke-width="1" />
+  <line x1="165" y1="108" x2="200" y2="110" stroke="#000" stroke-width="1" />
+  <line x1="165" y1="102" x2="200" y2="100" stroke="#000" stroke-width="1" />
+
+  <!-- Fur texture -->
+  <path
+    d="M125,75 Q130,70 135,75"
+    stroke="#B39981"
+    stroke-width="1"
+    fill="none"
+  />
+  <path
+    d="M165,75 Q170,70 175,75"
+    stroke="#B39981"
+    stroke-width="1"
+    fill="none"
+  />
+
+  <!-- Cat's paws -->
+  <ellipse cx="120" cy="260" rx="12" ry="6" fill="#D3BFAF" stroke="#B39981" stroke-width="1" />
+  <ellipse cx="180" cy="260" rx="12" ry="6" fill="#D3BFAF" stroke="#B39981" stroke-width="1" />
+</svg>
