@@ -1,0 +1,116 @@
+Here’s a detailed **QA testing checklist** for thoroughly testing `server.py` and its associated functionality:
+
+---
+
+### **Functional Testing**
+1. **Startup and Shutdown**:
+   - Verify the server starts successfully on the default port (`8000`) without errors.
+   - Test starting the server on a custom port using `--port` argument.
+   - Validate proper error messages for invalid port inputs (e.g., negative values, strings, or ports out of range).
+   - Ensure the server shuts down gracefully on `Ctrl+C`.
+
+2. **Homepage Accessibility**:
+   - Navigate to `http://localhost:<port>` and verify that the chat interface (`chat_interface.html`) loads correctly.
+   - Confirm the server returns a 404 error for invalid routes.
+
+3. **Message Submission**:
+   - Submit a valid message through the chat interface.
+   - Verify the message is saved as a `.txt` file in the `messages` directory.
+   - Check that the message appears immediately on the chat interface after submission.
+
+4. **File Handling**:
+   - Test the handling of multiple messages:
+     - Verify messages are stored sequentially (`message1.txt`, `message2.txt`, etc.).
+     - Ensure no overwrites or data loss occur.
+   - Test for invalid file inputs (e.g., non-text files in the `messages` directory) and confirm they don’t break the interface.
+
+5. **HTML Regeneration**:
+   - Ensure the `chat_interface.html` is updated dynamically after each new message.
+   - Verify the proper rendering of special characters (e.g., `<, >, &, "`) in messages.
+
+---
+
+### **UI/UX Testing**
+6. **Interface Functionality**:
+   - Validate that the form accepts input only when required fields are filled.
+   - Test the placeholder text and form submission button behavior.
+   - Verify that the UI aligns properly on various screen sizes and resolutions.
+
+7. **Message Formatting**:
+   - Confirm sender/receiver message styling is applied correctly based on naming rules (e.g., vowel-based differentiation).
+   - Ensure no style overlap or inconsistencies for long or multi-line messages.
+
+---
+
+### **Edge Case Testing**
+8. **Message Content**:
+   - Submit very long messages and verify they are stored and displayed correctly.
+   - Test submission of empty messages and confirm they are rejected with an appropriate error.
+   - Input non-standard characters or emojis to ensure proper handling and display.
+
+9. **Concurrent Users**:
+   - Simulate multiple users submitting messages simultaneously.
+   - Verify messages are saved and displayed in the correct order without conflicts.
+
+10. **Directory Validation**:
+    - Delete the `messages` directory before starting the server. Confirm it is recreated automatically.
+    - Verify behavior when the directory is set to read-only.
+
+---
+
+### **Security Testing**
+11. **Injection Attacks**:
+    - Submit messages containing HTML or JavaScript (e.g., `<script>alert('test')</script>`).
+    - Ensure the content is properly escaped and no malicious scripts are executed.
+
+12. **Unauthorized Access**:
+    - Confirm no sensitive server details are exposed in the response headers or body.
+    - Verify the server doesn’t allow unauthorized file access via URL manipulation (e.g., `http://localhost:<port>/../server.py`).
+
+---
+
+### **Performance Testing**
+13. **Load Testing**:
+    - Simulate high traffic by submitting a large number of messages.
+    - Confirm the server remains responsive and no data loss occurs.
+
+14. **Scalability**:
+    - Increase the size of the `messages` directory significantly and test the time taken to load the chat interface.
+
+---
+
+### **Compatibility Testing**
+15. **Browser Compatibility**:
+    - Test the chat interface on multiple browsers (e.g., Chrome, Firefox, Safari, Edge).
+    - Verify consistent behavior and UI appearance.
+
+16. **Environment Compatibility**:
+    - Run the server on different operating systems (e.g., Windows, macOS, Linux) and confirm functionality.
+
+---
+
+### **Negative Testing**
+17. **Invalid Requests**:
+    - Send malformed HTTP requests (e.g., unsupported methods like `PUT`, malformed headers).
+    - Confirm the server handles these gracefully without crashing.
+
+18. **Invalid Message Data**:
+    - Submit messages with only whitespace or unsupported encodings.
+    - Ensure appropriate validation and error handling.
+
+---
+
+### **Regression Testing**
+19. **Cross-Feature Validation**:
+    - Modify `styles.css` and verify the chat interface reflects the updated styles.
+    - Update the `generate_chat_html()` logic and confirm the changes propagate correctly to the interface.
+
+---
+
+### **Documentation Validation**
+20. **Help and Usage**:
+    - Run `python3 server.py --help` and confirm the displayed instructions are accurate and clear.
+
+---
+
+By following this checklist, you can comprehensively test the functionality, security, and performance of `server.py`. Let me know if you'd like further refinement or assistance with any testing tool setup!
